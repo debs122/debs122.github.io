@@ -15,9 +15,18 @@
     a { color: #0b5ed7; text-decoration: none; }
     .navbar { background-color: #0b1d39; }
     .navbar a { color: #fff !important; }
+
+    /* Smooth scrolling */
+    html { scroll-behavior: smooth; }
+
+    /* Highlight active link */
+    .navbar .nav-link.active {
+      font-weight: bold;
+      border-bottom: 2px solid #fff;
+    }
   </style>
 </head>
-<body>
+<body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="80" tabindex="0">
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg fixed-top">
@@ -37,7 +46,6 @@
   </div>
 </nav>
 
-<!-- Header -->
 <!-- Header -->
 <header>
   <div class="container text-center">
@@ -61,17 +69,15 @@
   </div>
 </header>
 
-
-
 <!-- About -->
 <section id="about">
   <div class="container">
     <h2>About Me</h2>
     <p>
-      I am a astronomer who is interested in studying the evolution of stars. My research focuses on binary star
-systems, with a particular interest in stars stripped in binaries and their evolution. I have experience in modeling stellar
-evolution and atmospheres. I am currently pursuing my PhD, where I aim to deepen our understanding of
-stellar structure, mass loss, and the complex processes in binary systems
+      I am an astronomer who is interested in studying the evolution of stars. My research focuses on binary star
+      systems, with a particular interest in stars stripped in binaries and their evolution. I have experience in modeling stellar
+      evolution and atmospheres. I am currently pursuing my PhD, where I aim to deepen our understanding of
+      stellar structure, mass loss, and the complex processes in binary systems.
     </p>
   </div>
 </section>
