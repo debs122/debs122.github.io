@@ -3,12 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Debasish Dutta </title>
+  <title>Debasish Dutta</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Your CSS -->
   <style>
     body {
       font-family: 'Helvetica Neue', sans-serif;
@@ -26,24 +25,24 @@
       border-bottom: 2px solid #fff;
     }
 
-    /* Header with background image */
+    /* Header */
     header {
       background: url("header.jpg") no-repeat center center;
       background-size: cover;
       color: #fff;
       padding: 80px 0;
       text-align: center;
-      position: relative; /* important for credit positioning */
+      position: relative;
     }
     header::before {
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(11, 29, 57, 0.6); /* dark overlay */
+      background: rgba(11, 29, 57, 0.6);
     }
     header .container {
       position: relative;
-      z-index: 1; /* keep text above overlay */
+      z-index: 1;
     }
     header h1 {
       font-size: 2.8rem;
@@ -54,7 +53,6 @@
       color: #d0d6e0;
     }
 
-    /* Credit text in bottom right */
     .image-credit {
       position: absolute;
       bottom: 10px;
@@ -64,10 +62,10 @@
       z-index: 2;
     }
 
-    /* General sections */
     section {
       padding: 60px 0;
     }
+
     footer {
       background: #0b1d39;
       color: #bbb;
@@ -75,9 +73,50 @@
       padding: 20px 0;
     }
 
-    /* Smooth scrolling */
     html {
       scroll-behavior: smooth;
+    }
+
+    /* Flip Cards */
+    .flip-card {
+      perspective: 1000px;
+      cursor: pointer;
+    }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 320px;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 15px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    .flip-card-front img {
+      width: 100%;
+      height: 70%;
+      object-fit: cover;
+    }
+    .flip-card-front h4 {
+      margin-top: 15px;
+      color: #0b1d39;
+    }
+    .flip-card-back {
+      background-color: #0b1d39;
+      color: white;
+      transform: rotateY(180deg);
+      padding: 20px;
     }
   </style>
 </head>
@@ -111,7 +150,6 @@
     <h3>PhD Student in Stellar Astrophysics | Institute of Science and Technology Austria</h3>
     <p>Stellar Astrophysics</p>
 
-    <!-- Academic Links -->
     <div class="mt-3">
       <a href="https://scholar.google.com/citations?user=fV4uENsAAAAJ&hl=en" target="_blank" class="mx-2">
         <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg" alt="Google Scholar" width="32">
@@ -124,10 +162,8 @@
       </a>
     </div>
   </div>
-
-  <!-- Credit -->
   <div class="image-credit">
-    Visualization of a binary star experiencing mass transfer. © Navid Marvi, courtesy of the Carnegie Institution for Science
+    Visualization of a binary star experiencing mass transfer. © Navid Marvi, Carnegie Institution for Science
   </div>
 </header>
 
@@ -136,75 +172,67 @@
   <div class="container">
     <h2>About Me</h2>
     <p>
-      I am an astronomer who is interested in studying the evolution of stars. My research focuses on binary star
-      systems, with a particular interest in stars stripped in binaries and their evolution. I have experience in modeling stellar
-      evolution and atmospheres. I am currently pursuing my PhD, where I aim to deepen our understanding of
-      stellar structure, mass loss, and the complex processes in binary systems.
+      I am an astronomer studying the evolution of stars, focusing on binary systems and stripped stars. My work combines stellar evolution and atmosphere modeling to understand how mass loss and binary interactions shape stellar lifetimes.
     </p>
   </div>
 </section>
 
-<!-- Research Interests -->
+<!-- Research -->
 <section id="research" style="background:#f7f9fc;">
-  <div class="container">
-    <h2>Research Interests</h2>
-    <ul>
-      <li>Stellar structure with MESA</li>
-      <li>Stellar atmospheres & radiative transfer</li>
-      <li>Spectroscopic modeling with FASTWIND and CMFGEN</li>
-      <li>Binary interactions & stripped star evolution</li>
-    </ul>
+  <div class="container text-center">
+    <h2 class="mb-5">Research</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-5 mb-4">
+        <div class="flip-card" onclick="flipCard(this)">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="stellar_evolution.jpg" alt="Stellar Evolution" class="img-fluid rounded shadow">
+              <h4 class="mt-3">Stellar Evolution</h4>
+            </div>
+            <div class="flip-card-back d-flex flex-column justify-content-center align-items-center">
+              <h4>Stellar Evolution</h4>
+              <p>Exploring how stars evolve, interact, and lose mass in binary systems.</p>
+              <a href="stellar-evolution.html" class="btn btn-light btn-sm mt-2">View Projects →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-5 mb-4">
+        <div class="flip-card" onclick="flipCard(this)">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="stellar_atmospheres.jpg" alt="Stellar Atmospheres" class="img-fluid rounded shadow">
+              <h4 class="mt-3">Stellar Atmospheres</h4>
+            </div>
+            <div class="flip-card-back d-flex flex-column justify-content-center align-items-center">
+              <h4>Stellar Atmospheres</h4>
+              <p>Modeling stellar spectra and radiative transfer using FASTWIND and CMFGEN.</p>
+              <a href="stellar-atmospheres.html" class="btn btn-light btn-sm mt-2">View Projects →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
-  
-    <!-- Publications -->
+
+<!-- Publications -->
 <section id="publications">
   <div class="container">
     <h2>Publications</h2>
-
-    <!-- Journal Publications -->
-    <h5>Journal Publications</h5>
-    <ul class="list-unstyled">
-      <li class="mb-3">
-        <strong>High-resolution spectral analysis of three high latitude carbon stars</strong>, <br>
-        Meenakshi Purandardas, <u>Debasish Dutta</u>, Aruna Goswami, Sreeja S. Kartha )<br>
-        <em>Publications of the Astronomical Society of Australia (PASA), 1-21, April 2025</em><br>
-        <a href="https://ui.adsabs.harvard.edu/abs/2025PASA...42...47P/abstract" target="_blank">Read on ADS</a>
-      </li>
-
-      <li class="mb-3">
-        <strong>Evolutionary nature of puffed-up stripped star binaries and their occurrence in stellar population</strong><br>
-        <u>Debasish Dutta</u>, Jakub Klencki <br>
-        <em>Astronomy & Astrophysics, A&A, 687, A215, July 2024 </em><br>
-        <a href="http://ui.adsabs.harvard.edu/abs/2024A%26A...687A.215D/abstract" target="_blank">Read on ADS</a>
-      </li>
+    <ul>
+      <li><strong>Evolutionary nature of puffed-up stripped star binaries and their occurrence in stellar population</strong><br>
+      <u>Debasish Dutta</u>, Jakub Klencki, <em>A&A, 687, A215 (2024)</em></li>
     </ul>
-
-    <!-- Conference Proceedings -->
-    <h5>Conference Proceedings</h5>
-    <ul class="list-unstyled">
-      <li class="mb-3">
-        <strong>Tracing the origin of neutron-capture elements in the metal-poor star HE 1244-3036</strong><br>
-        <u>Debasish Dutta</u>, Aruna Goswami <br>
-        <em>EPJ Web of Conferences, 297, 02004, June 2024</em><br>
-        <a href="https://ui.adsabs.harvard.edu/" target="_blank">Read on ADS</a>
-      </li>
-    </ul>
-
   </div>
 </section>
 
-
-
-
-<!-- Portfolio / Extras -->
+<!-- Beyond Research -->
 <section id="portfolio" style="background:#f7f9fc;">
   <div class="container">
     <h2>Beyond Research</h2>
-    <p>
-      Outside astronomy, I enjoy <strong>traveling</strong> (goal: visit 30 countries before 30) 
-      and playing the <strong>violin</strong>.
-    </p>
+    <p>I enjoy traveling (goal: visit 30 countries before 30) and playing the violin.</p>
   </div>
 </section>
 
@@ -213,16 +241,21 @@
   <div class="container">
     <h2>Contact</h2>
     <p>📧 debasish.dutta@ist.ac.at</p>
-    <p>🔗 <a href="https://www.linkedin.com/in/debasish-dutta-a67a58169/">LinkedIn</a> | 
+    <p><a href="https://www.linkedin.com/in/debasish-dutta-a67a58169/">LinkedIn</a> | 
        <a href="https://github.com/debasish-dutta">GitHub</a></p>
   </div>
 </section>
 
 <!-- Footer -->
 <footer>
-  <p>© 2025 Debasish Dutta </p>
+  <p>© 2025 Debasish Dutta</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function flipCard(card) {
+  card.classList.toggle('flipped');
+}
+</script>
 </body>
 </html>
