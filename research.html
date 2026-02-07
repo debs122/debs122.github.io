@@ -10,14 +10,18 @@
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container">
     <a class="navbar-brand text-white" href="index.html">Debasish Dutta</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li><a class="nav-link active" href="index.html">Home</a></li>
         <li><a class="nav-link active" href="research.html">Research</a></li>
         <li><a class="nav-link" href="publications.html">Publications</a></li>
+        <li><a class="nav-link" href="talks.html">Talks</a></li>
         <li><a class="nav-link" href="portfolio.html">Beyond Research</a></li>
         <li><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
@@ -33,7 +37,7 @@
 
       <!-- Stellar Evolution Card -->
       <div class="col-md-5 mb-4">
-        <div class="flip-card" onclick="flipCard(this)">
+        <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">
               <img src="assets/images/stellar-evol.jpg" alt="Stellar Evolution" class="img-fluid rounded shadow">
@@ -50,7 +54,7 @@
 
       <!-- Stellar Atmospheres Card -->
       <div class="col-md-5 mb-4">
-        <div class="flip-card" onclick="flipCard(this)">
+        <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">
               <img src="assets/images/stellar_atmos.jpg" alt="Stellar Atmospheres" class="img-fluid rounded shadow">
